@@ -1,0 +1,2 @@
+# Notes
+- https://media.licdn.com/dms/document/media/v2/D4D1FAQHLSmsLD_z-rQ/feedshare-document-pdf-analyzed/feedshare-document-pdf-analyzed/0/1700034912361?e=1758153600&v=beta&t=xt6IUSThtuCCXDHYwHhkX7WvhqikBL0A8PMNTfzGlGI
