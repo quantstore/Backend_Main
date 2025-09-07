@@ -7,7 +7,7 @@ class ApiError extends Error {
         message="Something Went Wrong !",
         statusCode,
         errors = [],
-        statck=""
+        stack=""
 ){
         super(message);// this is used to set the message property of the error object.
         this.statusCode = statusCode;// this is used to set the http status code.
@@ -15,8 +15,8 @@ class ApiError extends Error {
         this.success = false;// this is used to indicate whether the request was successful or not.
         this.errors = errors;// this is used to send any additional error details if required.
         // this is used to capture the stack trace of the error.
-        if(statck){
-            this.statck = statck;// this is used to set the stack trace of the error.
+        if(stack){
+            this.stack = stack;// this is used to set the stack trace of the error.
         }else{
             Error.captureStackTrace(this, this.constructor);// this is used to capture the stack trace of the error.
         }

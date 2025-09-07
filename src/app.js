@@ -21,7 +21,5 @@ app.use(cookieParser())// this is used to parse the cookies from the request.
 
 
 
-
-
 export default {app}
 
