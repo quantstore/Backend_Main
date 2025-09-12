@@ -13,7 +13,7 @@ connectDB().then(()=>{
     })
 })
 .catch((err)=>{
-    console.log("MONGODB CONNECTION FAILED !")
+    console.log("MONGODB CONNECTION FAILED!",err)
 })
 
 

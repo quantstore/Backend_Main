@@ -4,6 +4,7 @@
 
 import mongoose from 'mongoose'
 import {DB_NAME} from '../constants.js'
+console.log("🔑 MONGODB_URI being used:", process.env.MONGODB_URI);
 
 const connectDB = async () => {
     try{
@@ -13,7 +14,6 @@ const connectDB = async () => {
     catch(error){
         console.log("MongoDB Connection ERROR: ",error)
         process.exit(1)
-        throw err
     }
     
 }

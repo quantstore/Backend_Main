@@ -20,6 +20,12 @@ app.use(express.static('public'))// this is used to serve static files like imag
 app.use(cookieParser())// this is used to parse the cookies from the request.
 
 
+// routes
+import userRouter from './routes/user.routes.js'
 
-export default {app}
+// routes declaration:
+app.use("/api/v1/users",userRouter)
+//http://localhost:5000/api/v1/users/register
+
+export default app
 
