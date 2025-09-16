@@ -1,7 +1,8 @@
 import {mongoose,Schema,model} from 'mongoose';
 import jwt from 'jsonwebtoken';
-import bcrypt from 'bcryptjs';
+import bcrypt from 'bcrypt';
 
+// user schema
 // direct encryption is not possible in mongoose schema so we use mongoose middleware called as hooks
 // we can use pre and post hooks
 // pre hook is used to perform some operations before saving the document

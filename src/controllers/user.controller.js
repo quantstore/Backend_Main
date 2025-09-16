@@ -19,8 +19,12 @@ const registerUser = asyncHandler( async (req, res, next) =>{
     // 4.hash the password
     // 5.store the user in db
     // 6.send response
-
-    const {fullName,email, username,password} = req.body 
+    console.log("req.body",req.body)
+    console.log("req.files",req.files)
+    // step 1 and 2
+    // destructuring the req.body object to get the user details
+    // fullname, email, username, password are the fields in the req.body object
+    const {fullname,email, username,password} = req.body 
     console.log("email",email)
     console.log("username",username)
     // if(fullName === ""){
@@ -28,7 +32,7 @@ const registerUser = asyncHandler( async (req, res, next) =>{
     // }
 
     if(
-        [fullName,email,username,password].some((field) => 
+        [fullname,email,username,password].some((field) => 
             field?.trim()==="")
         ){
     
@@ -69,7 +73,7 @@ const registerUser = asyncHandler( async (req, res, next) =>{
 
     // create user object - create entry in db
     const user = await User.create({
-        fullName,
+        fullname,
         email,
         username: username.toLowerCase(),
         password,

@@ -1,11 +1,14 @@
-// require('dotenv').config({path:'./env'})
+// 
+// require('dotenv').config({path:'./.env'})
 
-// import dotenv from 'dotenv'
+import dotenv from 'dotenv'
 import app from "./app.js";
 import connectDB from "./db/index.js";
-// dotenv.config({
-//     path:'./env'
-// })
+// this is used to load the environment variables from the .env file.
+// it is used to set the environment variables in process.env object.
+dotenv.config({
+    path:'./.env'
+})
 // HERE THE CONNECT DB ASYNCHRONOUS FUNCTION IS CALLED.. IT RETURNS A PROMISE
 connectDB().then(()=>{
     app.listen(process.env.PORT||3000,"0.0.0.0",()=>{

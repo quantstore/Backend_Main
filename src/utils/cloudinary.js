@@ -1,6 +1,6 @@
 import cloudinary from "cloudinary"
 import { v2 as cloudinaryV2 } from "cloudinary"
-import {fs} from 'fs' // to delete the file after uploading it to cloudinary; this is file system module of node js;
+import fs from 'fs'; // to delete the file after uploading it to cloudinary; this is file system module of node js;
 import dotenv from 'dotenv'
 dotenv.config();
 
@@ -16,15 +16,16 @@ const uploadOnCloudinary = async (localfilePath) =>{
             throw new Error("File Path is required")
         }
         //uploading the file to cloudinary
-        const response = cloudinaryV2.uploader.upload(localfilePath, {resource_type: "auto"})
-        console.log("File uploaded successfully");
-        console.log(response.url);
+        const response = await cloudinaryV2.uploader.upload(localfilePath, {resource_type: "auto"})
+        // console.log("File uploaded successfully");
+        // console.log(response.url);
+        // fs.unlinkSync(localfilePath);// this will delete the file from local system in case of success in asyncronous way
         return response;
     }catch(error){
         // unlinking the file from the local system
         fs.unlinkSync(localfilePath);// this will delete the file from local system in case of error in asyncronous way 
-        return null
         console.log("Error while uploading the file to cloudinary", error);
+        return null;
     }
 }
 
