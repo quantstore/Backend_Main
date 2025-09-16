@@ -10,3 +10,5 @@ class ApiResponse{
         this.success = statusCode < 400;// this is used to indicate whether the request was successful or not.
     }
 }
+
+export {ApiResponse};

@@ -8,7 +8,7 @@ import connectDB from "./db/index.js";
 // })
 // HERE THE CONNECT DB ASYNCHRONOUS FUNCTION IS CALLED.. IT RETURNS A PROMISE
 connectDB().then(()=>{
-    app.listen(process.env.PORT||3000,()=>{
+    app.listen(process.env.PORT||3000,"0.0.0.0",()=>{
         console.log(`SERVER IS RUNNING AT PORT: ${process.env.PORT}`)
     })
 })

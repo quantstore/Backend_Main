@@ -38,4 +38,4 @@ const uploadOnCloudinary = async (localfilePath) =>{
 //            console.log(error);
 //        });
 
-export default cloudinaryV2;
+export {uploadOnCloudinary};
